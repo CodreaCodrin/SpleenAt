@@ -1137,7 +1137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5315175, y: 2.8571236, z: -33.661858}
+  m_LocalPosition: {x: -0.62554765, y: 2.8186798, z: -10}
   m_LocalScale: {x: 3.5395327, y: 2.4734297, z: 4.020909}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1188,7 +1188,6 @@ GameObject:
   m_Component:
   - component: {fileID: 649098477}
   - component: {fileID: 649098476}
-  - component: {fileID: 649098475}
   m_Layer: 0
   m_Name: 2bg (1)
   m_TagString: Untagged
@@ -1196,18 +1195,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &649098475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 649098474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2432326768cf2064c83e2381c05057d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &649098476
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1555,7 +1542,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1034694633}
   - component: {fileID: 1034694632}
-  - component: {fileID: 1034694631}
   m_Layer: 0
   m_Name: 2bg (2)
   m_TagString: Untagged
@@ -1563,18 +1549,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1034694631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1034694630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2432326768cf2064c83e2381c05057d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &1034694632
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3375,7 +3349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151007951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5986261, y: 3.90868, z: -8.3496}
+  m_LocalPosition: {x: -0.62554765, y: 3.90868, z: -8.3496}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4152,9 +4126,10 @@ GameObject:
   - component: {fileID: 1926274990}
   - component: {fileID: 1926274989}
   - component: {fileID: 1926274988}
-  - component: {fileID: 1926274987}
+  - component: {fileID: 1926274993}
   - component: {fileID: 1926274992}
   - component: {fileID: 1926274991}
+  - component: {fileID: 1926274994}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -4162,32 +4137,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &1926274987
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926274986}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.34880072, y: -0.098775506}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 3.2}
-    newSize: {x: 3.2, y: 3.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.2183177, y: 2.0146945}
-  m_EdgeRadius: 0
 --- !u!50 &1926274988
 Rigidbody2D:
   serializedVersion: 4
@@ -4270,7 +4219,7 @@ Transform:
   m_GameObject: {fileID: 1926274986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.09, z: 1.6504}
-  m_LocalScale: {x: 1.1262585, y: 0.98654455, z: 0.29707214}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 519420032}
@@ -4292,7 +4241,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1926274992}
-  runSpeed: 22.5
+  animator: {fileID: 1926274994}
+  runSpeed: 27
 --- !u!114 &1926274992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4317,10 +4267,58 @@ MonoBehaviour:
   m_CrouchDisableCollider: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1926274991}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnLanding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!58 &1926274993
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926274986}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 91853e838e810f840876dca183f8bdee, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.36400664, y: -0.4895264}
+  serializedVersion: 2
+  m_Radius: 0.5958432
+--- !u!95 &1926274994
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926274986}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f2c2ea3a6d5987449b8d6c2868202c1e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1976177751
 GameObject:
   m_ObjectHideFlags: 0
@@ -4345,7 +4343,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976177751}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.41, y: -1.1, z: 0}
+  m_LocalPosition: {x: -0.386, y: -1.087, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
