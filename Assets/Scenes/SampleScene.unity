@@ -1185,7 +1185,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505825130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.8, y: 1.09, z: 0}
+  m_LocalPosition: {x: -10.43, y: 1.35, z: 0}
   m_LocalScale: {x: 0.293, y: 0.2669, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1270,7 +1270,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5991773, y: 2.8186798, z: -10}
+  m_LocalPosition: {x: -0.62554765, y: 2.8186798, z: -10}
   m_LocalScale: {x: 3.5395327, y: 2.4734297, z: 4.020909}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1323,7 +1323,7 @@ GameObject:
   - component: {fileID: 622855002}
   - component: {fileID: 622855004}
   - component: {fileID: 622855005}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: mage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1395,7 +1395,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &622855004
 Rigidbody2D:
@@ -3465,7 +3465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151007951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5991773, y: 3.90868, z: -8.3496}
+  m_LocalPosition: {x: -0.62554765, y: 3.90868, z: -8.3496}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3653,7 +3653,7 @@ GameObject:
   - component: {fileID: 1315752663}
   - component: {fileID: 1315752666}
   - component: {fileID: 1315752665}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LupuIdle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3725,7 +3725,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &1315752665
 CapsuleCollider2D:
