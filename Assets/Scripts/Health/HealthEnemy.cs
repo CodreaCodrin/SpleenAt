@@ -21,8 +21,17 @@ public class HealthEnemy : MonoBehaviour
         anim = GetComponent<Animator>();
        
     }
+    private void SpawnOject()
+    {
+        float randomNumber = Random.Range(1, 100);
+        if(randomNumber > 0)
+        {
+           GameObject newObject = Instantiate(Romica,transform.position,transform.rotation);
+        }
+       
+    }
 
-    public void TakeDamage(float _damage)
+        public void TakeDamage(float _damage)
     {
         currentHeatlh = Mathf.Clamp(currentHeatlh - _damage, 0, startingHealth);
 
