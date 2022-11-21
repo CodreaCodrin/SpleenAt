@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Security;
@@ -30,7 +31,8 @@ public class enemyPatrol : MonoBehaviour
     [Header("cHASE Animator")]
     public bool run;
     public GameObject player;
-
+    public bool flip;
+    public float speedRun;
 
     private void Awake()
     {
@@ -87,11 +89,19 @@ public class enemyPatrol : MonoBehaviour
         anim.SetBool("walk", false);
         anim.SetBool("run", true);
 
-        Vector3 scale = transform.localScale;
 
-        transform.localScale = scale;
 
-        
+        if (player.transform.position.x < enemy.position.x)
+        {
+            enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * -1 * (flip ? -1 : 1), initScale.y, initScale.z);
+            enemy.position = new Vector3(enemy.position.x + Time.deltaTime * speedRun*-1, enemy.position.y, enemy.position.z);
+        }
+        else
+        {
+            enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * (flip ? -1 : 1), initScale.y, initScale.z);
+            enemy.position = new Vector3(enemy.position.x + Time.deltaTime * speedRun, enemy.position.y, enemy.position.z);
+        }
+
 
     }
 

@@ -11,6 +11,7 @@ public class healthPickUp : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+
             collision.GetComponent<Health>().AddHealth(healthValue);
             GameObject.Destroy(eu);
 

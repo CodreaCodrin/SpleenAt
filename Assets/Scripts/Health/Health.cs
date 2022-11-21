@@ -36,6 +36,7 @@ public class Health : MonoBehaviour
         {
             if(!dead)
             {
+                
                 anim.SetTrigger("dead");
 
                 //Player
@@ -60,13 +61,13 @@ public class Health : MonoBehaviour
 
     private IEnumerator Invunerability()
     {
-        Physics2D.IgnoreLayerCollision(3, 6, true);
+        Physics2D.IgnoreLayerCollision(3, 6, true);Physics2D.IgnoreLayerCollision(3, 7, true);
         Physics2D.queriesStartInColliders = false;
         spriteRend.color = new Color(1, 0, 0, 0.5f);
         yield return new WaitForSeconds(1.5f);
         spriteRend.color = Color.white;
 
-        Physics2D.IgnoreLayerCollision(3, 6, false);
+        Physics2D.IgnoreLayerCollision(3, 6, false);Physics2D.IgnoreLayerCollision(3, 7, false);
         Physics2D.queriesStartInColliders = true;
     }
 

@@ -9,6 +9,7 @@ public class HealthEnemy : MonoBehaviour
     [SerializeField] private float startingHealth;
 
     public GameObject patrol;
+    public GameObject Romica;
 
     public float currentHeatlh { get; private set; }
     private Animator anim;
@@ -27,11 +28,16 @@ public class HealthEnemy : MonoBehaviour
 
        
         if (currentHeatlh <= 0)
-        {   
+        {  
+           
             anim.SetBool("dead", true);
             patrol.GetComponent<enemyPatrol>().enabled = false;
             patrol.GetComponentInChildren<MeleeEnemy>().enabled = false;
             
+            
+        }
+        else
+        {
             
         }
 
