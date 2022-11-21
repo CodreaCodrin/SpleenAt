@@ -107,6 +107,7 @@ public class enemyPatrol : MonoBehaviour
 
     private void DirectionChange()
     {
+
         anim.SetBool("walk", false);
 
         idleTimer += Time.deltaTime;
@@ -119,6 +120,7 @@ public class enemyPatrol : MonoBehaviour
     private void MoveInDirection(int _direction)
     {
         idleTimer = 0;
+        anim.SetBool("run", false);
         anim.SetBool("walk", true);
 
         enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * _direction, initScale.y, initScale.z);
