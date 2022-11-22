@@ -88,6 +88,7 @@ public class enemyPatrol : MonoBehaviour
     {
         anim.SetBool("walk", false);
         anim.SetBool("run", true);
+        
 
 
 

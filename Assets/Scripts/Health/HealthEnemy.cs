@@ -24,7 +24,7 @@ public class HealthEnemy : MonoBehaviour
     private void SpawnOject()
     {
         float randomNumber = Random.Range(1, 100);
-        if(randomNumber > 0)
+        if(randomNumber > 70)
         {
            GameObject newObject = Instantiate(Romica,transform.position,transform.rotation);
         }
