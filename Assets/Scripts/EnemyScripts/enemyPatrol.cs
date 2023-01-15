@@ -8,8 +8,8 @@ using UnityEngine;
 public class enemyPatrol : MonoBehaviour
 {
     [Header("Patrol Points")]
-    [SerializeField] private Transform leftEdge;
-    [SerializeField] private Transform rightEdge;
+    public Transform leftEdge;
+    public Transform rightEdge;
 
     [Header("Enemy")]
     [SerializeField] private Transform enemy;
