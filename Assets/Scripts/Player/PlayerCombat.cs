@@ -12,6 +12,9 @@ public class PlayerCombat : MonoBehaviour
 
     public float attackRate = 2f;
     float nextAttackTime = 0f;
+
+    public int AttackBrowser = 1;
+    public float ComboWindow = 1f;
     
     // Update is called once per frame
     void Update()
@@ -22,22 +25,44 @@ public class PlayerCombat : MonoBehaviour
             {
                 if (animator.GetBool("IsJumping") == false)
                 {
-                    Attack();
+                    Attack(AttackBrowser);
+                    if (AttackBrowser != 3)
+                        AttackBrowser = AttackBrowser + 1;
+                    else
+                        AttackBrowser = 1;
                     nextAttackTime = Time.time + 1f / attackRate;
                 }
             }
         }
+
+        if (Time.time >= nextAttackTime + 1f / ComboWindow)
+        {
+            AttackBrowser = 1;
+        }
+
+        if (AttackBrowser > 1)
+            animator.SetBool("IsInCombo", true);
+        else
+            animator.SetBool("IsInCombo", false);
     }
 
-    void Attack()
+    void Attack(int WhichAttack)
     {
-        animator.SetTrigger("Attack");
-            
+        if(WhichAttack == 1)
+            animator.SetTrigger("Attack");
+        if(WhichAttack == 2)
+            animator.SetTrigger("Attack2");
+        if(WhichAttack == 3)
+            animator.SetTrigger("Attack3");
+
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
         foreach(Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<HealthEnemy>().TakeDamage(1);
+            if(WhichAttack != 3)
+                enemy.GetComponent<HealthEnemy>().TakeDamage(1);
+            else
+                enemy.GetComponent<HealthEnemy>().TakeDamage(2);
         }
     }
 
