@@ -54,15 +54,12 @@ public class Health : MonoBehaviour
         currentHeatlh = Mathf.Clamp(currentHeatlh + _value, 0, startingHealth);
     }
 
-    private void Update()
-    {
-       
-    }
-
     private IEnumerator Invunerability()
     {
-        Physics2D.IgnoreLayerCollision(3, 6, true);Physics2D.IgnoreLayerCollision(3, 7, true);
+        Physics2D.IgnoreLayerCollision(3, 6, true);
+        Physics2D.IgnoreLayerCollision(3, 7, true);
         Physics2D.queriesStartInColliders = false;
+
         spriteRend.color = new Color(1, 0, 0, 0.5f);
         yield return new WaitForSeconds(1.5f);
         spriteRend.color = Color.white;

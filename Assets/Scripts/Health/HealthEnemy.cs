@@ -13,7 +13,8 @@ public class HealthEnemy : MonoBehaviour
 
     public float currentHeatlh { get; private set; }
     private Animator anim;
-  
+
+    public SpriteRenderer spriteRend;
 
     private void Awake()
     {
@@ -31,18 +32,17 @@ public class HealthEnemy : MonoBehaviour
        
     }
 
-        public void TakeDamage(float _damage)
+    public void TakeDamage(float _damage)
     {
         currentHeatlh = Mathf.Clamp(currentHeatlh - _damage, 0, startingHealth);
+        StartCoroutine(TakeDamageAnim());
 
-       
         if (currentHeatlh <= 0)
         {  
            
             anim.SetBool("dead", true);
             patrol.GetComponent<enemyPatrol>().enabled = false;
             patrol.GetComponentInChildren<MeleeEnemy>().enabled = false;
-            
             
         }
         else
@@ -56,12 +56,11 @@ public class HealthEnemy : MonoBehaviour
     {
         GameObject.Destroy(patrol);
     }
-   
 
-    private void Update()
+    private IEnumerator TakeDamageAnim()
     {
-
+        spriteRend.color = new Color(4.5f, 0, 0, 1.0f);
+        yield return new WaitForSeconds(0.3f);
+        spriteRend.color = Color.white;
     }
-
-   
 }

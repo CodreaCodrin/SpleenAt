@@ -225,6 +225,7 @@ MonoBehaviour:
   startingHealth: 5
   patrol: {fileID: 5367646417667134046}
   Romica: {fileID: 4709343047420246076, guid: ba53a7ecf62674c4aab5b6a467997ccb, type: 3}
+  spriteRend: {fileID: 5367646418208080714}
 --- !u!1 &5367646418267200047
 GameObject:
   m_ObjectHideFlags: 0
