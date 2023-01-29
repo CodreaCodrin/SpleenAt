@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 5367646418267200045}
   m_Layer: 7
   m_Name: Runrange
-  m_TagString: Untagged
+  m_TagString: Ignore_Range
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,9 +251,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5367646418267200047}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.39, z: -0}
-  m_LocalScale: {x: 25.259375, y: 3.2379, z: 1}
+  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.38999993, z: 0}
+  m_LocalScale: {x: 25.259375, y: 3.2379005, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5367646418208080713}
