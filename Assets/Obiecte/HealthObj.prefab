@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4709343047420246079}
   - component: {fileID: 4709343047420246078}
   - component: {fileID: 4709343047420246077}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: HealthObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4709343047420246076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.45, y: 1.14, z: 1.6107954}
-  m_LocalScale: {x: 0.31, y: 0.29, z: 1}
+  m_LocalPosition: {x: -7.436, y: 1.102, z: 1.6107954}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: dedee6854df987d48bdde2943621b192, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6faabb01bf7f34445a0f26c22f5ca7f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthValue: 1
-  me: {fileID: 0}
+  me: {fileID: 4709343047420246076}
 --- !u!61 &4709343047420246077
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -117,12 +117,12 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.68, y: 7.58}
+    oldSize: {x: 1.65, y: 1.4}
     newSize: {x: 5.68, y: 7.58}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.68, y: 7.58}
+  m_Size: {x: 5.2652345, y: 5.623477}
   m_EdgeRadius: 0
