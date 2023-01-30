@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4709343047420246079}
   - component: {fileID: 4709343047420246078}
   - component: {fileID: 4709343047420246077}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HealthObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthValue: 1
-  eu: {fileID: 4709343047420246076}
+  me: {fileID: 0}
 --- !u!61 &4709343047420246077
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class healthPickUp : MonoBehaviour
 {
     [SerializeField] private float healthValue;
-    public GameObject eu;
+    public GameObject me;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,7 +13,7 @@ public class healthPickUp : MonoBehaviour
         {
 
             collision.GetComponent<Health>().AddHealth(healthValue);
-            GameObject.Destroy(eu);
+            GameObject.Destroy(me);
 
         }    
     }

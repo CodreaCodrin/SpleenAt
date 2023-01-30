@@ -14,7 +14,7 @@ public class SpawnPatrol : MonoBehaviour
 
     void Start()
     {
-        pozitie.y = 2.6f;
+        pozitie.y = 2.53f;
         pozitie.x = transform.position.x;
         pozitie.z = transform.position.z;
         StartCoroutine(waiter());

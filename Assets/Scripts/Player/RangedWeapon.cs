@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using TMPro;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 public class RangedWeapon : MonoBehaviour
 {
     public Transform firePoint;
-    public GameObject shurikenPrefab;
+    public GameObject shurikenPrefab,textGameObject;
+    private TMP_Text text;
 
-    public int Inventory = 3;
+    public int Inventory = 3, limit = 4;
     public float attackRate = 2f;
     float nextAttackTime = 0f;
 
@@ -21,6 +25,7 @@ public class RangedWeapon : MonoBehaviour
                 Shoot();
                 nextAttackTime = Time.time + 1f / attackRate;
                 Inventory--;
+                text.text = Inventory.ToString();
             }
         }
     }
@@ -32,6 +37,16 @@ public class RangedWeapon : MonoBehaviour
 
     public void AddShuriken (int howmuch)
     {
-        Inventory = Inventory + howmuch;
+        if (Inventory < limit)
+        {
+            Inventory = Inventory + howmuch;
+            text.text = Inventory.ToString();
+        }
+    }
+
+    private void Start()
+    {
+        text = textGameObject.GetComponent<TMP_Text>();
+        text.text = "3";
     }
 }

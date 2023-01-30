@@ -9,7 +9,8 @@ public class HealthEnemy : MonoBehaviour
     [SerializeField] private float startingHealth;
 
     public GameObject patrol;
-    public GameObject Romica;
+    public GameObject life;
+    public GameObject shuriken;
 
     public float currentHeatlh { get; private set; }
     private Animator anim;
@@ -27,7 +28,11 @@ public class HealthEnemy : MonoBehaviour
         float randomNumber = Random.Range(1, 100);
         if(randomNumber > 70)
         {
-           GameObject newObject = Instantiate(Romica,transform.position,transform.rotation);
+           GameObject newObject = Instantiate(life,transform.position,transform.rotation);
+        }
+        else if(randomNumber >30)
+        {
+           GameObject newObject = Instantiate(shuriken, transform.position, transform.rotation);
         }
        
     }
