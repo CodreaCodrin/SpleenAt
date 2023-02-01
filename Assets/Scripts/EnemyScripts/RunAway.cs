@@ -3,22 +3,19 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyChase : MonoBehaviour
+public class RunAway : MonoBehaviour
 {
 
     public GameObject enemy;
-  
+
     private bool hit;
 
 
     private void Update()
     {
-        if (hit == true)
-        {
-            enemy.GetComponent<enemyPatrol>().RunTrue(true);
-           
-        }
-        else enemy.GetComponent<enemyPatrol>().RunTrue(false);
+       
+            enemy.GetComponent<enemyPatrolShaman>().RunTrue(hit);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,3 +35,6 @@ public class EnemyChase : MonoBehaviour
     }
 
 }
+
+
+    

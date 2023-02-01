@@ -54,7 +54,7 @@ MonoBehaviour:
   run: 0
   player: {fileID: 0}
   flip: 0
-  speedRun: 5
+  speedRun: 4
 --- !u!1 &5367646418208080719
 GameObject:
   m_ObjectHideFlags: 0

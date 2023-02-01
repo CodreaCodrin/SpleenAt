@@ -12,6 +12,7 @@ public class HealthEnemy : MonoBehaviour
     public GameObject life;
     public GameObject shuriken;
 
+
     public float currentHeatlh { get; private set; }
     private Animator anim;
 

@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 6634116111865765874}
   - component: {fileID: 6634116111865765876}
   - component: {fileID: 6634116111865765875}
+  - component: {fileID: 8466190087055378505}
   m_Layer: 7
   m_Name: PrasleaRUn
   m_TagString: Ignore_Range
@@ -285,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd1e32f99bdb904abb575799031a1aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 6634116111312997221}
+  enemy: {fileID: 6634116111865765873}
 --- !u!61 &6634116111865765875
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -312,3 +313,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 14.575849, y: 2.965089}
   m_EdgeRadius: 0
+--- !u!114 &8466190087055378505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6634116111865765873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd1e32f99bdb904abb575799031a1aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 6634116111312997221}
