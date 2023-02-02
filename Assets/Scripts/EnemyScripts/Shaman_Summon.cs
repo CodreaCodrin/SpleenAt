@@ -38,6 +38,11 @@ public class Shaman_Summon : MonoBehaviour
         pozitie.z = transform.position.z;
      
     }
+
+    public void DisableOnDead()
+    {
+        enemyPatrol.GetComponent<enemyPatrolShaman>().enabled = false;
+    }
     private void Update()
     {
         cooldownTimer += Time.deltaTime;
@@ -88,7 +93,7 @@ public class Shaman_Summon : MonoBehaviour
 
     IEnumerator spawn()
     {
-        yield return new WaitForSecondsRealtime(0.1f);
+        yield return new WaitForSecondsRealtime(0.01f);
         GameObject newObject = Instantiate(enemy1, pozitie, transform.rotation);
 
 
@@ -101,7 +106,7 @@ public class Shaman_Summon : MonoBehaviour
         newObject.GetComponent<enemyPatrol>().player = enemyPatrol.GetComponent<enemyPatrolShaman>().player;
         newObject.GetComponent<enemyPatrol>().leftEdge = enemyPatrol.GetComponent<enemyPatrolShaman>().leftEdge;
         newObject.GetComponent<enemyPatrol>().rightEdge = enemyPatrol.GetComponent<enemyPatrolShaman>().rightEdge;
-        yield return new WaitForSecondsRealtime(0.1f);
+        yield return new WaitForSecondsRealtime(0.01f);
     }
 
 }

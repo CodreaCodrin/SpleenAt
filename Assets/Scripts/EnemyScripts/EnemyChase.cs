@@ -13,12 +13,7 @@ public class EnemyChase : MonoBehaviour
 
     private void Update()
     {
-        if (hit == true)
-        {
-            enemy.GetComponent<enemyPatrol>().RunTrue(true);
-           
-        }
-        else enemy.GetComponent<enemyPatrol>().RunTrue(false);
+        enemy.GetComponentInParent<enemyPatrol>().RunTrue(hit);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

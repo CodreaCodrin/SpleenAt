@@ -41,7 +41,7 @@ public class HealthEnemy : MonoBehaviour
     public void TakeDamage(float _damage)
     {
         currentHeatlh = Mathf.Clamp(currentHeatlh - _damage, 0, startingHealth);
-        StartCoroutine(TakeDamageAnim());
+       
 
         if (currentHeatlh <= 0)
         {  
@@ -53,7 +53,7 @@ public class HealthEnemy : MonoBehaviour
         }
         else
         {
-            
+             StartCoroutine(TakeDamageAnim());
         }
 
     }

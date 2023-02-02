@@ -43,6 +43,8 @@ public class enemyPatrolShaman : MonoBehaviour
         anim.SetBool("walk", false);
      
     }
+
+ 
     public void RunTrue(bool a)
     {
         run = a;
