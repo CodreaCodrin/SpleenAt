@@ -120,6 +120,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patrol: {fileID: 0}
   me: {fileID: 44437518969984210}
-  Player: {fileID: 0}
-  Re: {fileID: 0}
-  Le: {fileID: 0}
+  variabila: 2.53

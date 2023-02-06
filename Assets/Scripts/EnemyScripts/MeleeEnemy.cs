@@ -25,6 +25,8 @@ public class MeleeEnemy : MonoBehaviour
     private Health playerHealth;
 
     private enemyPatrol enemyPatrol;
+    private CioaraPatrol cioara;
+    private bool ok;
 
 
 
@@ -32,6 +34,9 @@ public class MeleeEnemy : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         enemyPatrol = GetComponentInParent<enemyPatrol>();
+        if (enemyPatrol != null) ok = true;
+        else 
+        cioara = GetComponentInParent<CioaraPatrol>();
     }
 
     private void Update()
@@ -47,8 +52,14 @@ public class MeleeEnemy : MonoBehaviour
         }
         else anim.SetBool("attack", false);
 
-        if (enemyPatrol != null)
-            enemyPatrol.enabled = !PlayerInSight();
+        if (ok)
+        {   if (enemyPatrol != null)
+                 enemyPatrol.enabled = !PlayerInSight();
+        }
+        else
+        {
+            if (cioara != null) cioara.enabled = !PlayerInSight();
+        }
     }
     public bool PlayerInSight()
     {

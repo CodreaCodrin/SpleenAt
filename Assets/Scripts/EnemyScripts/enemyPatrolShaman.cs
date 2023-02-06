@@ -37,7 +37,11 @@ public class enemyPatrolShaman : MonoBehaviour
     {
         initScale = enemy.localScale;
         anim.SetBool("walk", true);
+        player = GameObject.FindGameObjectWithTag("Player");
+        leftEdge = GameObject.FindGameObjectWithTag("Leftedge").transform;
+        rightEdge = GameObject.FindGameObjectWithTag("RightEdge").transform;
     }
+
     private void OnDisable()
     {
         anim.SetBool("walk", false);
@@ -52,7 +56,7 @@ public class enemyPatrolShaman : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(run);
+        
         if (run == false)
         {
             anim.SetBool("walk", true);

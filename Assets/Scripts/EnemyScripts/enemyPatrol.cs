@@ -30,13 +30,16 @@ public class enemyPatrol : MonoBehaviour
 
     [Header("cHASE Animator")]
     public bool run;
-    public GameObject player;
+    public  GameObject player;
     public bool flip;
     public float speedRun;
 
     private void Awake()
     {
         initScale = enemy.localScale;
+        player = GameObject.FindGameObjectWithTag("Player");
+       leftEdge = GameObject.FindGameObjectWithTag("Leftedge").transform;
+       rightEdge = GameObject.FindGameObjectWithTag("RightEdge").transform;
     }
 
 

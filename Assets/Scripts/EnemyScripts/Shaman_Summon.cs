@@ -59,10 +59,9 @@ public class Shaman_Summon : MonoBehaviour
            
      
         }
-      
 
-       // if (enemyPatrol != null)
-          //  enemyPatrol.enabled = !PlayerInSight();
+       if (enemyPatrol != null)
+           enemyPatrol.enabled = PlayerInSight();
     }
     public bool PlayerInSight()
     {
@@ -97,15 +96,10 @@ public class Shaman_Summon : MonoBehaviour
         GameObject newObject = Instantiate(enemy1, pozitie, transform.rotation);
 
 
-        newObject.GetComponent<enemyPatrol>().player = enemyPatrol.GetComponent<enemyPatrolShaman>().player;
-        newObject.GetComponent<enemyPatrol>().leftEdge = enemyPatrol.GetComponent<enemyPatrolShaman>().leftEdge;
-        newObject.GetComponent<enemyPatrol>().rightEdge = enemyPatrol.GetComponent<enemyPatrolShaman>().rightEdge;
 
         pozitie.x = transform.position.x - 5f;
         newObject = Instantiate(enemy2, pozitie, transform.rotation);
-        newObject.GetComponent<enemyPatrol>().player = enemyPatrol.GetComponent<enemyPatrolShaman>().player;
-        newObject.GetComponent<enemyPatrol>().leftEdge = enemyPatrol.GetComponent<enemyPatrolShaman>().leftEdge;
-        newObject.GetComponent<enemyPatrol>().rightEdge = enemyPatrol.GetComponent<enemyPatrolShaman>().rightEdge;
+      
         yield return new WaitForSecondsRealtime(0.01f);
     }
 
