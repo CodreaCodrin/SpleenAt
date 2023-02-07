@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5367646417667134044}
   - component: {fileID: 5367646417667134045}
+  - component: {fileID: 6452070794207043164}
   m_Layer: 6
   m_Name: LupPatrol 1
   m_TagString: Untagged
@@ -55,6 +56,18 @@ MonoBehaviour:
   player: {fileID: 0}
   flip: 0
   speedRun: 4
+--- !u!114 &6452070794207043164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5367646417667134046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9954a1666337847b3984e7e68b6410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5367646418208080719
 GameObject:
   m_ObjectHideFlags: 0

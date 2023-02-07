@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5736831780809965321}
   - component: {fileID: 5736831780809965316}
+  - component: {fileID: -4091022577658799022}
   m_Layer: 6
   m_Name: CioaraPatrol
   m_TagString: Untagged
@@ -56,6 +57,18 @@ MonoBehaviour:
   poz: 1
   player: {fileID: 0}
   flip: 0
+--- !u!114 &-4091022577658799022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5736831780809965320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9954a1666337847b3984e7e68b6410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5736831782158521921
 GameObject:
   m_ObjectHideFlags: 0

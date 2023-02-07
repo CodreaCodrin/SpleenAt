@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6276930349793628523}
   - component: {fileID: 6276930349793628520}
+  - component: {fileID: 134917460098519192}
   m_Layer: 6
   m_Name: Shaman_Patrol
   m_TagString: Untagged
@@ -55,6 +56,18 @@ MonoBehaviour:
   player: {fileID: 0}
   flip: 1
   speedRun: 4.75
+--- !u!114 &134917460098519192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6276930349793628521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9954a1666337847b3984e7e68b6410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6276930351419623208
 GameObject:
   m_ObjectHideFlags: 0

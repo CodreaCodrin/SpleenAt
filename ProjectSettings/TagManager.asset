@@ -8,6 +8,7 @@ TagManager:
   - Ignore_Range
   - RightEdge
   - Leftedge
+  - WaveSpawner
   layers:
   - Default
   - TransparentFX
