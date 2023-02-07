@@ -5,14 +5,14 @@ using UnityEngine;
 public class PickShuriken : MonoBehaviour
 {
     [SerializeField] private int Value;
-    public GameObject eu;
+    public GameObject me;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
             collision.GetComponent<RangedWeapon>().AddShuriken(Value);
-            GameObject.Destroy(eu);
+            GameObject.Destroy(me);
         }
     }
 }
