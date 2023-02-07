@@ -11,6 +11,7 @@ public class SpawnPatrol : MonoBehaviour
     private Vector3 pozitie;
 
 
+
     void Start()
     {
         pozitie.y = variabila;
@@ -24,7 +25,6 @@ public class SpawnPatrol : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(5f);
         GameObject newObject = Instantiate(patrol, pozitie, transform.rotation);
-     
         yield return new WaitForSeconds(0.1f);
         Destroy(me);
 

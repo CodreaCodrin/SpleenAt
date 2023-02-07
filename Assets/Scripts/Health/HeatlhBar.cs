@@ -6,16 +6,15 @@ using UnityEngine.UI;
 public class HeatlhBar : MonoBehaviour
 {
     [SerializeField] private Health playerHealth;
-    [SerializeField] private Image totalhealthBar;
     [SerializeField] private Image curentheathBar;
+    public GameObject healthBar;
 
-    private void Start()
-    {
-        totalhealthBar.fillAmount = playerHealth.currentHeatlh / 10;
-    }
     private void Update()
     {
         curentheathBar.fillAmount = playerHealth.currentHeatlh / 10;
+        if (playerHealth.currentHeatlh <= 0)
+            healthBar.SetActive(false);
+           
     }
 
 }

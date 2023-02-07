@@ -60,8 +60,7 @@ public class Shaman_Summon : MonoBehaviour
      
         }
 
-       if (enemyPatrol != null)
-           enemyPatrol.enabled = PlayerInSight();
+
     }
     public bool PlayerInSight()
     {

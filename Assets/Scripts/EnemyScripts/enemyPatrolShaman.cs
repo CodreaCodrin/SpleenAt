@@ -36,10 +36,10 @@ public class enemyPatrolShaman : MonoBehaviour
     private void Awake()
     {
         initScale = enemy.localScale;
-        anim.SetBool("walk", true);
         player = GameObject.FindGameObjectWithTag("Player");
         leftEdge = GameObject.FindGameObjectWithTag("Leftedge").transform;
-        rightEdge = GameObject.FindGameObjectWithTag("RightEdge").transform;
+        rightEdge = GameObject.FindGameObjectWithTag("RightEdge").transform; 
+        anim.SetBool("walk", true);
     }
 
     private void OnDisable()

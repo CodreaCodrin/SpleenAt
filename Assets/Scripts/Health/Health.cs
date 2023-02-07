@@ -19,14 +19,16 @@ public class Health : MonoBehaviour
     private Animator anim;
     private bool deadstate;
 
-    public GameObject cam;
+    public GameObject cam, groundCheck;
 
     private void Awake()
     {
+        GetComponent<CapsuleCollider2D>().sharedMaterial.friction = 0;
         cam.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 5f;
         currentHeatlh = startingHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
+        Physics2D.IgnoreLayerCollision(3, 9, true);
 
     }
 
@@ -42,6 +44,7 @@ public class Health : MonoBehaviour
         {
             if (!deadstate)
             {
+                GetComponent<CapsuleCollider2D>().sharedMaterial.friction = 100;
                 deadstate = true;
                 Vector2 location = new Vector2(-0.31f, 0.1f);
                 GetComponent<CapsuleCollider2D>().offset = location;
@@ -52,6 +55,7 @@ public class Health : MonoBehaviour
                 GetComponent<PlayerCombat>().enabled = false;
                 GetComponent<PlayerMovement>().enabled = false;
                 GetComponent<RangedWeapon>().enabled = false;
+                
 
 
             }
@@ -88,8 +92,8 @@ public class Health : MonoBehaviour
     public void Zoom()
     {
         cam.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 2.5f;
-       
-
+        cam.GetComponent<CinemachineVirtualCamera>().m_Follow = groundCheck.transform;
+        
     }
 
 }

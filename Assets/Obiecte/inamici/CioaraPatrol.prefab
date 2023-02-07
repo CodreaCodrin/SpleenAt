@@ -50,7 +50,7 @@ MonoBehaviour:
   rightEdge: {fileID: 0}
   enemy: {fileID: 5736831780809965321}
   speed1: 2
-  speed2: 3.5
+  speed2: 6
   idleDuration: 0.5
   anim: {fileID: 5736831782158521983}
   run: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115a69cc9773f524b89a0419cf772ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3
+  startingHealth: 1
   patrol: {fileID: 5736831780809965320}
   life: {fileID: 4709343047420246076, guid: ba53a7ecf62674c4aab5b6a467997ccb, type: 3}
   shuriken: {fileID: 1497416125015335856, guid: 945f7277281cecb4bbbc8c6285ded8c4, type: 3}

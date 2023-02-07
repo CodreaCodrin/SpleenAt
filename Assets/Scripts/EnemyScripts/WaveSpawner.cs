@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
     public List<Enemy> enemies = new List<Enemy>();
-    public int currWave = 0;
+    public int currWave = 0, ThisWave = 0;
     public int currLevel = 1;
     private int waveValue;
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
@@ -18,12 +19,16 @@ public class WaveSpawner : MonoBehaviour
     private float spawnInterval;
     private float spawnTimer;
 
+    public TMP_Text numarwave;
+    public GameObject waveAfisare;
+
     public List<GameObject> spawnedEnemies = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
         GenerateWave();
     }
+    
 
     // Update is called once per frame
     void FixedUpdate()
@@ -36,6 +41,7 @@ public class WaveSpawner : MonoBehaviour
                 GameObject enemy = (GameObject)Instantiate(enemiesToSpawn[0], spawnLocation[spawnIndex].position, spawnLocation[spawnIndex].rotation);
                 enemiesToSpawn.RemoveAt(0);
                 spawnedEnemies.Add(enemy);
+                
                 spawnTimer = spawnInterval;
 
                 if (spawnIndex + 1 <= spawnLocation.Length - 1)
@@ -61,9 +67,22 @@ public class WaveSpawner : MonoBehaviour
         if (waveTimer <= 0 && spawnedEnemies.Count <= 0)
         {
             currWave++;
+            ThisWave++;
+            StartCoroutine(WaveAfis());
             GenerateWave();
         }
     }
+
+     IEnumerator WaveAfis()
+    {
+
+        numarwave.text = ThisWave.ToString();
+        waveAfisare.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        waveAfisare.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
+    }
+
                                                             
     public void GenerateWave()
     {

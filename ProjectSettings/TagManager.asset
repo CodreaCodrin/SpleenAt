@@ -9,6 +9,7 @@ TagManager:
   - RightEdge
   - Leftedge
   - WaveSpawner
+  - InamicCollide
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Enemy
   - LayerNou
   - LayerFugit
-  - 
+  - InamicColide
   - 
   - 
   - 
