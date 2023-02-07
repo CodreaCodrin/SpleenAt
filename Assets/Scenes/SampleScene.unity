@@ -1148,7 +1148,7 @@ Camera:
   far clip plane: 50
   field of view: 60
   orthographic: 1
-  orthographic size: 4.98
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1172,7 +1172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6057384, y: 2.8186803, z: -10}
+  m_LocalPosition: {x: -0.6081712, y: 2.83, z: -10}
   m_LocalScale: {x: 3.5395327, y: 2.4734297, z: 4.020909}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3874,7 +3874,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1926274990}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 4.98
+    OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 50
     Dutch: 0
@@ -3898,7 +3898,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151007951}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.1242614, y: 4.12868, z: -8.3496}
+  m_LocalPosition: {x: 2.1218286, y: 4.14, z: -8.3496}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5517,8 +5517,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a45b8c37053024fa7851af6a57e86e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 10
+  startingHealth: 2
   iFramesD: 2
+  cam: {fileID: 1151007951}
 --- !u!70 &1926274997
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5657,7 +5658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 44437518969984210, guid: 10e41f12acf1c5e4995dfc5336ca0964, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 831715428826833335, guid: 10e41f12acf1c5e4995dfc5336ca0964, type: 3}
       propertyPath: m_SortingLayer

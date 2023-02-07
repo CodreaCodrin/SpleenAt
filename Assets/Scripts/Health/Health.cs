@@ -1,13 +1,15 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
 public class Health : MonoBehaviour
 {
-    [Header ("health")]
-   [SerializeField] private float startingHealth;
+    [Header("health")]
+    [SerializeField] private float startingHealth;
 
     [Header("iFrames")]
     [SerializeField] private float iFramesD;
@@ -15,36 +17,45 @@ public class Health : MonoBehaviour
 
     public float currentHeatlh { get; private set; }
     private Animator anim;
-    private bool dead;
+    private bool deadstate;
+
+    public GameObject cam;
 
     private void Awake()
     {
+        cam.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 5f;
         currentHeatlh = startingHealth;
         anim = GetComponent<Animator>();
-        spriteRend = GetComponent<SpriteRenderer>();    
+        spriteRend = GetComponent<SpriteRenderer>();
+
     }
 
     public void TakeDamage(float _damage)
     {
         currentHeatlh = Mathf.Clamp(currentHeatlh - _damage, 0, startingHealth);
-        
-        if(currentHeatlh > 0)
+
+        if (currentHeatlh > 0)
         {
             StartCoroutine(Invunerability());
         }
         else
         {
-            if(!dead)
+            if (!deadstate)
             {
-                
-                anim.SetTrigger("dead");
-
-                //Player
+                deadstate = true;
+                Vector2 location = new Vector2(-0.31f, 0.1f);
+                GetComponent<CapsuleCollider2D>().offset = location;
+                anim.SetBool("dead", true);
+                Physics2D.IgnoreLayerCollision(3, 6, true);
+                Physics2D.IgnoreLayerCollision(3, 7, true);
+                Physics2D.queriesStartInColliders = false;
+                GetComponent<PlayerCombat>().enabled = false;
                 GetComponent<PlayerMovement>().enabled = false;
+                GetComponent<RangedWeapon>().enabled = false;
 
-                dead = true;
+
             }
-            
+
         }
 
     }
@@ -64,8 +75,21 @@ public class Health : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         spriteRend.color = Color.white;
 
-        Physics2D.IgnoreLayerCollision(3, 6, false);Physics2D.IgnoreLayerCollision(3, 7, false);
+        Physics2D.IgnoreLayerCollision(3, 6, false); Physics2D.IgnoreLayerCollision(3, 7, false);
         Physics2D.queriesStartInColliders = true;
+    }
+
+
+    public void Dead()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    public void Zoom()
+    {
+        cam.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 2.5f;
+       
+
     }
 
 }
