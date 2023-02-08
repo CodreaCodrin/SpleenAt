@@ -47,14 +47,17 @@ public class HealthEnemy : MonoBehaviour
         {
            
             anim.SetBool("dead", true);
-            if(patrol.GetComponent<EyePatrol>() != null) patrol.GetComponent<EyePatrol>().enabled =false;
-            if (patrol.GetComponent<enemyPatrol>() != null) patrol.GetComponent<enemyPatrol>().enabled = false;
-            if (patrol.GetComponent<Shaman_Summon>() != null) patrol.GetComponent<Shaman_Summon>().enabled = false;
-            if (patrol.GetComponent<MeleeEnemy>() != null) patrol.GetComponent<MeleeEnemy>().enabled = false;
-            if (patrol.GetComponent<CioaraPatrol>() != null) patrol.GetComponent<CioaraPatrol>().enabled = false;
+            MonoBehaviour[] scripts = patrol.GetComponents<MonoBehaviour>();
            
-            
-            
+            foreach (MonoBehaviour script in scripts)
+            {
+                script.enabled = false;
+            }
+             scripts = patrol.GetComponentsInChildren<MonoBehaviour>();
+            foreach (MonoBehaviour script in scripts)
+            {
+                script.enabled = false;
+            }
         }
         else
         {

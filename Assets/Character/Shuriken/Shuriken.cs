@@ -19,12 +19,14 @@ public class Shuriken : MonoBehaviour
         {
             HealthEnemy enemy = hitInfo.GetComponent<HealthEnemy>();
             eyeAttack eye = hitInfo.GetComponent<eyeAttack>();
+            IgnoreShuriken shuriken = hitInfo.GetComponent<IgnoreShuriken>();
            
           if(enemy != null)
             {
-                if (eye == null)
+                if (eye == null && shuriken ==null )
                     enemy.TakeDamage(1);
-                else enemy.TakeDamage(100);
+                else if(eye!=null) enemy.TakeDamage(100);
+                
             }
             Destroy(gameObject);
         }

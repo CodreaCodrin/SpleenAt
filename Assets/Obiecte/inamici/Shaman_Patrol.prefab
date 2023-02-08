@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115a69cc9773f524b89a0419cf772ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 10
+  startingHealth: 7
   patrol: {fileID: 6276930349793628521}
   life: {fileID: 4709343047420246076, guid: ba53a7ecf62674c4aab5b6a467997ccb, type: 3}
   shuriken: {fileID: 1497416125015335856, guid: 945f7277281cecb4bbbc8c6285ded8c4, type: 3}

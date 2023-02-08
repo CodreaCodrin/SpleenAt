@@ -33,9 +33,11 @@ public class enemyPatrol : MonoBehaviour
     public  GameObject player;
     public bool flip;
     public float speedRun;
+    public bool canflip;
 
     private void Awake()
     {
+        canflip = true;
         initScale = enemy.localScale;
         player = GameObject.FindGameObjectWithTag("Player");
        leftEdge = GameObject.FindGameObjectWithTag("Leftedge").transform;
@@ -56,7 +58,7 @@ public class enemyPatrol : MonoBehaviour
     }
     private void Update()
     {
-        if(run == false)
+        if(run == false && canflip == true)
         {
             if (movingLeft)
             {
@@ -91,18 +93,18 @@ public class enemyPatrol : MonoBehaviour
     {
         anim.SetBool("walk", false);
         anim.SetBool("run", true);
-        
 
 
 
-        if (player.transform.position.x < enemy.position.x)
+      
+           if (player.transform.position.x < enemy.position.x)
         {
-            enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * -1 * (flip ? -1 : 1), initScale.y, initScale.z);
+            if (canflip == true) enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * -1 * (flip ? -1 : 1), initScale.y, initScale.z);
             enemy.position = new Vector3(enemy.position.x + Time.deltaTime * speedRun*-1, enemy.position.y, enemy.position.z);
         }
-        else
+           else
         {
-            enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * (flip ? -1 : 1), initScale.y, initScale.z);
+            if (canflip == true) enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * (flip ? -1 : 1), initScale.y, initScale.z);
             enemy.position = new Vector3(enemy.position.x + Time.deltaTime * speedRun, enemy.position.y, enemy.position.z);
         }
 
@@ -127,7 +129,7 @@ public class enemyPatrol : MonoBehaviour
         anim.SetBool("run", false);
         anim.SetBool("walk", true);
 
-        enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * _direction, initScale.y, initScale.z);
+        if(canflip == true) enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * _direction, initScale.y, initScale.z);
         enemy.position = new Vector3(enemy.position.x + Time.deltaTime * _direction * speed,enemy.position.y,enemy.position.z);
     }
 }

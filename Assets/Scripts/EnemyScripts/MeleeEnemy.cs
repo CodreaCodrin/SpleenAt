@@ -84,4 +84,10 @@ public class MeleeEnemy : MonoBehaviour
             playerHealth.TakeDamage(damage);
         }
     }
+
+    public void runboi()
+    {
+        bool a = GetComponentInParent<enemyPatrol>().canflip;
+        GetComponentInParent<enemyPatrol>().canflip = !a;
+    }
 }
