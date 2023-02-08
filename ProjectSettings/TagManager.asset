@@ -10,6 +10,7 @@ TagManager:
   - Leftedge
   - WaveSpawner
   - InamicCollide
+  - WorldBorder
   layers:
   - Default
   - TransparentFX

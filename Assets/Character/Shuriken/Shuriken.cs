@@ -18,9 +18,13 @@ public class Shuriken : MonoBehaviour
         if(hitInfo.gameObject.tag != "Ignore_Range")
         {
             HealthEnemy enemy = hitInfo.GetComponent<HealthEnemy>();
-            if(enemy != null)
+            eyeAttack eye = hitInfo.GetComponent<eyeAttack>();
+           
+          if(enemy != null)
             {
-                 enemy.TakeDamage(1);
+                if (eye == null)
+                    enemy.TakeDamage(1);
+                else enemy.TakeDamage(100);
             }
             Destroy(gameObject);
         }
