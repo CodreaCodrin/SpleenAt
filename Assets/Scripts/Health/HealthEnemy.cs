@@ -44,11 +44,15 @@ public class HealthEnemy : MonoBehaviour
        
 
         if (currentHeatlh <= 0)
-        {  
-            patrol.GetComponent<EyePatrol>().enabled =false;
+        {
+           
             anim.SetBool("dead", true);
-            patrol.GetComponent<enemyPatrol>().enabled = false;
-            patrol.GetComponentInChildren<MeleeEnemy>().enabled = false;
+            if(patrol.GetComponent<EyePatrol>() != null) patrol.GetComponent<EyePatrol>().enabled =false;
+            if (patrol.GetComponent<enemyPatrol>() != null) patrol.GetComponent<enemyPatrol>().enabled = false;
+            if (patrol.GetComponent<Shaman_Summon>() != null) patrol.GetComponent<Shaman_Summon>().enabled = false;
+            if (patrol.GetComponent<MeleeEnemy>() != null) patrol.GetComponent<MeleeEnemy>().enabled = false;
+            if (patrol.GetComponent<CioaraPatrol>() != null) patrol.GetComponent<CioaraPatrol>().enabled = false;
+           
             
             
         }
