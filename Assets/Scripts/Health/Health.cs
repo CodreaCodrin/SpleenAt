@@ -20,6 +20,7 @@ public class Health : MonoBehaviour
     private bool deadstate;
 
     public GameObject cam, groundCheck;
+    public List<GameObject> Lifes = new List<GameObject>();
 
     private void Awake()
     {
@@ -35,6 +36,11 @@ public class Health : MonoBehaviour
     public void TakeDamage(float _damage)
     {
         currentHeatlh = Mathf.Clamp(currentHeatlh - _damage, 0, startingHealth);
+
+        int health = (int)currentHeatlh;
+        Animator life = Lifes[health].GetComponent<Animator>();
+        life.SetTrigger("Lose");
+       
 
         if (currentHeatlh > 0)
         {
@@ -65,7 +71,11 @@ public class Health : MonoBehaviour
     }
 
     public void AddHealth(float _value)
-    {
+    {   int health = (int)currentHeatlh;
+        Animator life = Lifes[health].GetComponent<Animator>();
+        life.SetTrigger("Add");
+       
+
         currentHeatlh = Mathf.Clamp(currentHeatlh + _value, 0, startingHealth);
     }
 
@@ -95,5 +105,7 @@ public class Health : MonoBehaviour
         cam.GetComponent<CinemachineVirtualCamera>().m_Follow = groundCheck.transform;
         
     }
+
+  
 
 }

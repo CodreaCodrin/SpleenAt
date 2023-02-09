@@ -33,7 +33,7 @@ public class Shaman_Summon : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         enemyPatrol = GetComponentInParent<enemyPatrolShaman>();
-        pozitie.y = 2.53f;
+        pozitie.y = 1.7f;
         pozitie.x = transform.position.x+5f;
         pozitie.z = transform.position.z;
      
