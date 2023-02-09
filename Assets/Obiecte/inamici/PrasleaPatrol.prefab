@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6634116110834600483}
   - component: {fileID: 6634116110834600488}
   - component: {fileID: 6634116110834600487}
-  - component: {fileID: 6634116110834600489}
   m_Layer: 6
   m_Name: Praslea
   m_TagString: Enemy
@@ -173,18 +172,6 @@ MonoBehaviour:
   life: {fileID: 4709343047420246076, guid: ba53a7ecf62674c4aab5b6a467997ccb, type: 3}
   shuriken: {fileID: 1497416125015335856, guid: 945f7277281cecb4bbbc8c6285ded8c4, type: 3}
   spriteRend: {fileID: 6634116110834600485}
---- !u!114 &6634116110834600489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6634116110834600482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7af83f5f1608d6b4084103c79f0cf664, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6634116111312997221
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,8 +12,12 @@ public class healthPickUp : MonoBehaviour
         if(collision.tag == "Player")
         {
 
-            collision.GetComponent<Health>().AddHealth(healthValue);
-            GameObject.Destroy(me);
+            
+           if(collision.GetComponent<Health>().currentHeatlh <= 9)
+            { 
+                collision.GetComponent<Health>().AddHealth(healthValue);
+                GameObject.Destroy(me);
+            }
 
         }    
     }
