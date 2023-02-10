@@ -27,6 +27,7 @@ public class WaveSpawner : MonoBehaviour
     void Start()
     {
         GenerateWave();
+        //load record Wave
     }
     
 
@@ -68,6 +69,7 @@ public class WaveSpawner : MonoBehaviour
         {
             currWave++;
             ThisWave++;
+         
             StartCoroutine(WaveAfis());
             GenerateWave();
         }

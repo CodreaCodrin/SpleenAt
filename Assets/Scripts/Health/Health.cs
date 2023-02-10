@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
+using TMPro;
 
 public class Health : MonoBehaviour
 {
@@ -15,23 +15,37 @@ public class Health : MonoBehaviour
     [SerializeField] private float iFramesD;
     private SpriteRenderer spriteRend;
 
-    public float currentHeatlh { get; private set; }
     private Animator anim;
     private bool deadstate;
+    public float currentHeatlh { get; private set; }
 
-    public GameObject cam, groundCheck;
+    [Header("Record Wave")]
+    public int record;
+    public TMP_Text recordText;
+
+    [Header("GameObj ref.")]
+    public GameObject cam;
+    public GameObject groundCheck;
+    public GameObject wave;
     public List<GameObject> Lifes = new List<GameObject>();
+    public GameObject buttons;
+  
 
     private void Awake()
     {
+        PlayerData data = SaveSystem.LoadPlayer();
+        Physics2D.IgnoreLayerCollision(3, 6, false);
+        Physics2D.IgnoreLayerCollision(3, 7, false);
+        Physics2D.queriesStartInColliders = true;
+        if (data!= null) record = data.record; 
         GetComponent<CapsuleCollider2D>().sharedMaterial.friction = 0;
         cam.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 5f;
         currentHeatlh = startingHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
         Physics2D.IgnoreLayerCollision(3, 9, true);
-
-    }
+        recordText.text = "Record Wave " + record.ToString();
+}
 
     public void TakeDamage(float _damage)
     {
@@ -71,7 +85,9 @@ public class Health : MonoBehaviour
     }
 
     public void AddHealth(float _value)
-    {   int health = (int)currentHeatlh;
+    {   
+     
+        int health = (int)currentHeatlh;
         Animator life = Lifes[health].GetComponent<Animator>();
         life.SetTrigger("Add");
        
@@ -93,9 +109,14 @@ public class Health : MonoBehaviour
         Physics2D.queriesStartInColliders = true;
     }
 
-
+  
     public void Dead()
     {
+        int newrecord = wave.GetComponent<WaveSpawner>().ThisWave - 1;
+        if(newrecord >= record) 
+            { record =newrecord;
+            SaveSystem.SaveRecord(this);
+        }
         GetComponent<SpriteRenderer>().enabled = false;
     }
 
@@ -104,6 +125,13 @@ public class Health : MonoBehaviour
         cam.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 2.5f;
         cam.GetComponent<CinemachineVirtualCamera>().m_Follow = groundCheck.transform;
         
+    }
+
+    public void buttonsActive()
+    {
+        buttons.SetActive(true);
+     
+
     }
 
   

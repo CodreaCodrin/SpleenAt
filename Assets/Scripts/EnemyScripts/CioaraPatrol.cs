@@ -37,7 +37,8 @@ public class CioaraPatrol : MonoBehaviour
     {
         initScale = enemy.localScale;
         up.y = 4.55f;
-        
+
+        poz = (transform.position.y == up.y);
 
         player = GameObject.FindGameObjectWithTag("Player");
         leftEdge = GameObject.FindGameObjectWithTag("Leftedge").transform;
@@ -100,7 +101,7 @@ public class CioaraPatrol : MonoBehaviour
                 }
 
             }
-            else
+            else 
             {
                 if (transform.position.y != up.y)
                 {
