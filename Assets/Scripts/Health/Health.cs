@@ -29,6 +29,7 @@ public class Health : MonoBehaviour
     public GameObject wave;
     public List<GameObject> Lifes = new List<GameObject>();
     public GameObject buttons;
+    public GameObject RecordText;
   
 
     private void Awake()
@@ -45,7 +46,7 @@ public class Health : MonoBehaviour
         spriteRend = GetComponent<SpriteRenderer>();
         Physics2D.IgnoreLayerCollision(3, 9, true);
         recordText.text = "Record Wave " + record.ToString();
-}
+    }
 
     public void TakeDamage(float _damage)
     {
@@ -75,13 +76,8 @@ public class Health : MonoBehaviour
                 GetComponent<PlayerCombat>().enabled = false;
                 GetComponent<PlayerMovement>().enabled = false;
                 GetComponent<RangedWeapon>().enabled = false;
-                
-
-
             }
-
         }
-
     }
 
     public void AddHealth(float _value)
@@ -130,10 +126,6 @@ public class Health : MonoBehaviour
     public void buttonsActive()
     {
         buttons.SetActive(true);
-     
-
+        RecordText.SetActive(false);
     }
-
-  
-
 }
