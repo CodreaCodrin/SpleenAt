@@ -21,5 +21,6 @@ public class ButtonLogic : MonoBehaviour
     {
         myText = GetComponentInChildren<TMP_Text>();
         myText.text = "OPTIONS";
+       
     }
 }

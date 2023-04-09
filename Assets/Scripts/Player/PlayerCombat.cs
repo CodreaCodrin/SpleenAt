@@ -15,8 +15,14 @@ public class PlayerCombat : MonoBehaviour
 
     public int AttackBrowser = 1;
     public float ComboWindow = 1f;
-    
-    // Update is called once per frame
+
+    private AudioSource sunet;
+
+
+    private void Start()
+    {
+        sunet = GetComponent<AudioSource>();
+    }    // Update is called once per frame
     void Update()
     {
         if(Time.time >= nextAttackTime)
@@ -48,7 +54,8 @@ public class PlayerCombat : MonoBehaviour
 
     void Attack(int WhichAttack)
     {
-        if(WhichAttack == 1)
+        sunet.PlayOneShot(sunet.clip);
+        if (WhichAttack == 1)
             animator.SetTrigger("Attack");
         if(WhichAttack == 2)
             animator.SetTrigger("Attack2");
