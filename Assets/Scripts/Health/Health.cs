@@ -30,6 +30,8 @@ public class Health : MonoBehaviour
     public List<GameObject> Lifes = new List<GameObject>();
     public GameObject buttons;
     public GameObject RecordText;
+
+    public AudioSource sunet;
   
 
     private void Awake()
@@ -55,7 +57,8 @@ public class Health : MonoBehaviour
         int health = (int)currentHeatlh;
         Animator life = Lifes[health].GetComponent<Animator>();
         life.SetTrigger("Lose");
-       
+
+        sunet.PlayOneShot(sunet.clip);
 
         if (currentHeatlh > 0)
         {

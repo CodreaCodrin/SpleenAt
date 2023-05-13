@@ -29,6 +29,8 @@ public class Shaman_Summon : MonoBehaviour
 
     private enemyPatrolShaman enemyPatrol;
 
+    public AudioSource sunet;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -52,7 +54,7 @@ public class Shaman_Summon : MonoBehaviour
             {
                 cooldownTimer = 0;
                 
-           
+               
                 StartCoroutine(waiter());
 
             }
@@ -82,6 +84,8 @@ public class Shaman_Summon : MonoBehaviour
     IEnumerator waiter()
     {
         anim.SetBool("summon", true);
+
+        sunet.PlayOneShot(sunet.clip);
         yield return new WaitForSecondsRealtime(1.6f);
 
         anim.SetBool("summon", false);

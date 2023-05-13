@@ -28,6 +28,7 @@ public class MeleeEnemy : MonoBehaviour
     private CioaraPatrol cioara;
     private bool ok;
 
+    public AudioSource sunet;
 
 
     private void Awake()
@@ -48,6 +49,7 @@ public class MeleeEnemy : MonoBehaviour
             {
                 cooldownTimer = 0;
                 anim.SetBool("attack" , true);
+                sunet.PlayOneShot(sunet.clip);
             }
         }
         else anim.SetBool("attack", false);

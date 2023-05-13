@@ -16,12 +16,11 @@ public class PlayerCombat : MonoBehaviour
     public int AttackBrowser = 1;
     public float ComboWindow = 1f;
 
-    private AudioSource sunet;
+    public AudioSource sunet1,sunet2,sunet3;
 
 
     private void Start()
     {
-        sunet = GetComponent<AudioSource>();
     }    // Update is called once per frame
     void Update()
     {
@@ -54,7 +53,23 @@ public class PlayerCombat : MonoBehaviour
 
     void Attack(int WhichAttack)
     {
-        sunet.PlayOneShot(sunet.clip);
+        if (WhichAttack == 1)
+        {
+            sunet1.PlayOneShot(sunet1.clip);
+      
+        }
+
+        if (WhichAttack == 2)
+        {
+            sunet2.PlayOneShot(sunet2.clip);
+        
+        }
+
+        if (WhichAttack == 3)
+        {
+            sunet3.PlayOneShot(sunet3.clip);
+        }
+
         if (WhichAttack == 1)
             animator.SetTrigger("Attack");
         if(WhichAttack == 2)
@@ -80,4 +95,6 @@ public class PlayerCombat : MonoBehaviour
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
+    
+   
 }
